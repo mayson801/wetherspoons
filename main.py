@@ -137,18 +137,22 @@ def read_from_file():
     total_array=format_name_changes(total_array)
     return total_array
 
-#read from file
-total_array=read_from_file()
+def main():
+    #read from file
+    total_array=read_from_file()
 
-#group by iteams
-iteams_grouped=group_iteams(read_iteams(total_array))
-print(iteams_grouped)
-#group by location
-location_group=group_location(total_array)
-print(location_group)
+    #group by iteams
+    iteams_grouped=group_iteams(read_iteams(total_array))
+    print(iteams_grouped)
+    #group by location
+    location_group=group_location(total_array)
+    print(location_group)
 
-sorted(location_group, key = lambda x: int(x[3]))
+    sorted(location_group, key = lambda x: int(x[3]))
 
-#write_to_csv(group_iteams(read_iteams(total_array)),"group iteams")
-#write_to_csv(total_array,"total")
-#write_to_csv(read_iteams(total_array),"eachorder")
+    #write_to_csv(group_iteams(read_iteams(total_array)),"group iteams")
+    #write_to_csv(total_array,"total")
+    #write_to_csv(read_iteams(total_array),"eachorder")
+
+if __name__ == "__main__":
+    main()
